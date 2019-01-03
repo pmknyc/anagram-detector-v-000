@@ -8,13 +8,17 @@ attr_accessor :word
 
 # word given at initialize: split string into array of letters
 # sort letter array and keep word array as object
-# anagram_words array to match: 
+# anagram_words array to match:
 # split words array into individual arrays of letters in each word, sorted
+# or send words to hash with orig_word => sorted_word
 
 # ary <=> other_ary → -1, 0, +1 or nil
+# or use anagram_words.include?(word) to match word array to each sorted 
   def match(word_array)
-    word = self.word.split.sort
-    to_match = word_array.split(",")
+    anagram = self.word.split(//).sort
+    matches = {}
+    word_array.each.with_index do |word, i|
+      word.split(//).sort
 
   end
 end

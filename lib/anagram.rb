@@ -17,7 +17,7 @@ attr_accessor :word
 		  word_array.each_with_index do |word, index|
       	matched = word.split(//).sort
 				match_index = index if matched == anagram
-			end 
+			end
 		word_array[match_index] if match_index != nil
 	end
-end		
+end

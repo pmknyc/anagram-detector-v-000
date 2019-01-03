@@ -13,12 +13,13 @@ attr_accessor :word
 # or send words to hash with orig_word => sorted_word
 
 # ary <=> other_ary → -1, 0, +1 or nil
-# or use anagram_words.include?(word) to match word array to each sorted 
+# or use anagram_words.include?(word) to match word array to each sorted
   def match(word_array)
     anagram = self.word.split(//).sort
     matches = {}
-    word_array.each.with_index do |word, i|
-      word.split(//).sort
-
+    word_array.each do |word|
+      matches[word] = word.split(//).sort
+    end
+    matches
   end
 end
